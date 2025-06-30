@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simulador de Fuerza de Coulomb</title>
+  <link rel="stylesheet" href="fisica.css" />
+</head>
+<body>
+
+  <h1>Simulador de Fuerzas de Coulomb</h1>
+
+  <label>Método de entrada:</label>
+  <select id="modoEntrada" onchange="actualizarModo()">
+    <option value="coordenadas">Coordenadas Cartesianas</option>
+    <option value="distancia">Distancia</option>
+  </select>
+
+    <div class="contenedor-cargas">  
+        <div class="carga" id="c1">
+            <h3>Carga 1</h3>
+            <input type="number" id="q1" placeholder="Valor" />
+            <select id="unit1">
+            <option value="1e-6">μC</option>
+            <option value="1e-9">nC</option>
+            <option value="1e-3">mC</option>
+            </select>
+            <div class="coordenadas">
+            <input type="number" id="x1" placeholder="X (m)" />
+            <input type="number" id="y1" placeholder="Y (m)" />
+            </div>
+            <div class="distancia" style="display: none;">
+            <input type="number" id="r1" placeholder="Distancia (m)" />
+            
+            </div>
+        </div>
+
+        <div class="carga" id="c2">
+            <h3>Carga 2</h3>
+            <input type="number" id="q2" placeholder="Valor" />
+            <select id="unit2">
+            <option value="1e-6">μC</option>
+            <option value="1e-9">nC</option>
+            <option value="1e-3">mC</option>
+            </select>
+            <div class="coordenadas">
+            <input type="number" id="x2" placeholder="X (m)" />
+            <input type="number" id="y2" placeholder="Y (m)" />
+            </div>
+            <div class="distancia" style="display: none;">
+            <input type="number" id="r2" placeholder="Distancia (m)" />
+            
+            </div>
+        </div>
+
+        <div class="carga" id="c3">
+            <h3>Carga 3</h3>
+            <input type="number" id="q3" placeholder="Valor" />
+            <select id="unit3">
+            <option value="1e-6">μC</option>
+            <option value="1e-9">nC</option>
+            <option value="1e-3">mC</option>
+            </select>
+            <div class="coordenadas">
+            <input type="number" id="x3" placeholder="X (m)" />
+            <input type="number" id="y3" placeholder="Y (m)" />
+            </div>
+            <div class="distancia" style="display: none;">
+            <input type="number" id="r3" placeholder="Distancia (m)" />
+            
+            </div>
+        </div>
+    </div>
+    
+        <div id="globalAnguloContainer" style="margin: 10px;">
+         <label>Ángulo común para todas las cargas (°):</label>
+         <input type="number" id="anguloGlobal" placeholder="Ej: 60" />
+        </div>
+         <button onclick="simular()">Calcular y Dibujar</button>
+    <div class="contenedor-resultado-lienzo">
+       
+        <div id="resultados" style="margin-top: 20px; font-weight: bold;"></div>
+        <canvas id="lienzo" width="400" height="400"></canvas>
+    </div>
+
+  <script src="fisica.js"></script>
+</body>
+</html>
